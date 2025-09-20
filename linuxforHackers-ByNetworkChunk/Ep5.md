@@ -16,6 +16,9 @@
 
 ```bash
 dpkg -i package_name.deb            # here -i stands for installation process
+
+# for listing all of the packages of your system
+dpkg -l
 ```
 
 ▶️ **Disadvantages of Debian Packages →**
@@ -33,12 +36,15 @@ sudo apt upgrade                # this command is used in order to upgrade the p
 # above command is also used and recommended for proper installation
 
 sudo apt install package_name   # for installation of specific packages that we have requirements and need with
+
+# we can also do the update and upgrade at one single line using && Operator
+sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt full-upgrade            # this will remove the older version of the packages and add-on the newer version of the packages
 ```
 
 → In case of using **apt** we have an online **Repository** or an **Storage Location (Collection of Software)** from where we used to install the Software or Program directly into our device, hence we have the advantage of installing the software directly, and no need of download its packages before installation. 
 
 ▶️ Checking the **Sources** of **apt** →
-
 
 → From here we'll get the details of the sources from where the data is coming for packages installation
 ```bash
@@ -74,3 +80,60 @@ sudo apt purge package_name
 ```bash
 sudo apt --installed | grep ^package_name
 ```
+
+→ **aptitude** : In case of using aptitude with the command given below, we have a different level of **UI** interface that is opened regarding the packages that were already installed, and the packages that were installed regarding specific purpose seperately including some other different functionality available in it.
+
+→ If it is showing that the command is not found, you need to install it. In most of the cases, we must need to install it before using in case of using it in Kali Linux, we must need to install it first, cause it isn't already installed.
+
+
+```bash
+sudo apt install aptitude -y
+```
+
+→ For using it as per the system permission we can use **sudo** with it.
+
+```bash
+sudo aptitude           # provides different level of UI interface inside the Terminal Only
+
+# for installing different packages we have the command below
+sudo aptitude install package_name
+```
+
+→ **snap** : This is another category of **Package Manager** which has a different functionality of working, in case of using **snap** we will have our packages installed at a specific place or store from where we can easily pick and use them whenever we wanted !
+
+→ We must need to install **snap**, together by **enabling** and **starting** its services, before using it for installation of different packages.
+
+```bash
+sudo apt install snapd -y               # for installing snapd and all its components
+
+sudo systemctl enable snapd             # for enabling its services
+sudo systemctl start snapd              # for starting its services
+
+# enabling the sockets for creating or establishing the links before getting any packages installed
+sudo systemctl enable snapd.socket
+sudo systemctl start snapd.socket
+
+# now you can use the following command for installation of packages
+sudo snap install package_name --classic
+
+# or you can use the command given below for the same operation
+sudo snap install --classic package_name
+```
+
+→ **git** : It is another kind of packages manager that is not actually used by the developers as a package manager. It is used as **Code Manager** in most of the Cases. Below we have use cases for using it and installing different categories of packages.
+
+→ You also need to take care of using the latest version of **git** that helps you finding the latest version of packages that you're looking for.
+
+```bash
+sudo apt update && sudo apt install --only-upgrade git -y
+```
+
+→ On the place of installing some stuff, here we used to clone the repository of the codes that were created by other hackers in order to be usable, and they put it in their public repos that we used to clone.
+
+```bash
+git clone repos_link
+```
+
+## 👩🏻‍💻 Today's Task
+
+→ Revise all the things that were included in today's session regarding different category of available package managers together by doing different installation practice. Don't forget to star this repo for upcoming updates !
