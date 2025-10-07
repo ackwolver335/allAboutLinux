@@ -43,3 +43,31 @@ command -V echo                             # checking for confirmation
 
 # for getting any kind of help regarding it
 help echo
+
+# for checking the username or home
+echo ~
+
+# for getting into old working directory
+echo ~-
+
+# Brace Expension : It is used for creating sets or ranges.
+echo {1..10}            # for counting till 1 to 10 we can also do the reverse of it, also with alphabets {a..z}
+
+# for creating multiple file with same number but different initiation we can use it
+touch file{1..5}.txt
+
+cat {cat,dog}_{1..5}            # different combination with different things
+
+# creating a variable
+greeting="Doing Greater everyday !"
+echo $greeting
+
+# Pattern Substitution : In order to subsitute the value and create pattern for it, to be used afterwards.
+echo ${greeting//e/_}           # will replace all e's with _ in the content inside it
+
+# Command Subsitution : Used for putting the substitution of one command inside another command, which was represented as `...` in its older versions
+userName="The name of the user using this device is $(whoami)"
+currentpyver="The current version of Python is $(python3 -v)"
+
+# for doing simple calculation
+echo $((2+2))
