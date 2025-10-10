@@ -14,3 +14,6 @@ echo "The name is $myname"
 # defining a lowerstring variable using declare
 declare -l lowerstringname="ABHAY CHAUDHARY"
 echo "My fullname in lowerstring is $lowerstringname"
+
+# now we are going to learn more things
+
